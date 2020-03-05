@@ -24,4 +24,4 @@ requiered to run application:
 2. Clone git repository
 3. Run console and go to app direct
 4. Type command: <i><b>symfony serve</b></i>
-5. Go to generate app link: example <link>127.0.0.1:8000</link>
+5. Go to generate app link: example <link>http://127.0.0.1:8000</link>
