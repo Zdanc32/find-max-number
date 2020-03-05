@@ -1,0 +1,16 @@
+<h1>Find your number</h1>
+<label>Length of series: {{ selectedNumber }} </label> <br />
+<label>The max number from generated series is {{ maxNumber }}</label>
+<br />
+<br />
+
+{{ form_start(form) }}
+<div class="row">
+    <div class="col">
+        {{ form_label(form.howLongSeries) }} {{ form_widget(form.howLongSeries) }}
+    </div>
+    <div class="my-custom-class-for-errors">
+        {{ form_errors(form.howLongSeries) }}
+    </div>
+</div>
+{{ form_end(form) }}
