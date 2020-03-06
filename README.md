@@ -19,7 +19,7 @@ requiered to run application:
     <li>Install Symfony, which creates in your computer a binary called symfony that provides all the tools you need to develop your application locally.</li>
 </lo>
 
-#how to run
+# how to run
 1. Install all requirements  
 2. Clone git repository
 3. Run console and go to app direct
