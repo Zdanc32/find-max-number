@@ -1,5 +1,5 @@
 # calc-app
-This app generate series with pattern:
+This app generate series with pattern and find max number from generated series:
 <br />
 a0 = 0
 <br />
