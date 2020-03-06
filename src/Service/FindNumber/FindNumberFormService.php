@@ -12,7 +12,7 @@ use App\DTO\NumberDTO;
 use App\Helper\NumberFormatHelper;
 use Symfony\Component\Form\FormInterface;
 
-class FindNumberFormService
+class FindNumberFormService implements FindNumberFormServiceInterface
 {
     private $findNumberService;
 

@@ -8,9 +8,8 @@
 
 namespace App\Controller\Calculator;
 
-use App\DTO\NumberDTO;
 use App\Form\FindNumber\FindNumberForm;
-use App\Service\FindNumber\FindNumberFormService;
+use App\Service\FindNumber\FindNumberFormServiceInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,7 +22,7 @@ class FindNumberController extends AbstractController
     private $findNumberFormService;
 
     public function __construct(
-        FindNumberFormService $findNumberFormService
+        FindNumberFormServiceInterface $findNumberFormService
     ) {
         $this->findNumberFormService = $findNumberFormService;
     }
