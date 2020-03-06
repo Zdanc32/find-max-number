@@ -12,7 +12,6 @@ use App\DTO\NumberDTO;
 
 interface FindNumberServiceInterface
 {
-    public function executeFromController(array $dataForm): NumberDTO;
+    public function execute(int $number): NumberDTO;
 
-    public function executeFromCommand(int $number): NumberDTO;
 }

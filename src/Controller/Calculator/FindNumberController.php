@@ -10,7 +10,7 @@ namespace App\Controller\Calculator;
 
 use App\DTO\NumberDTO;
 use App\Form\FindNumber\FindNumberForm;
-use App\Service\FindNumber\FindNumberServiceInterface;
+use App\Service\FindNumber\FindNumberFormService;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -20,23 +20,19 @@ use Symfony\Component\Routing\Annotation\Route;
   */
 class FindNumberController extends AbstractController
 {
-    private $findNumberService;
+    private $findNumberFormService;
 
     public function __construct(
-      FindNumberServiceInterface $findNumberService
+        FindNumberFormService $findNumberFormService
     ) {
-        $this->findNumberService = $findNumberService;
+        $this->findNumberFormService = $findNumberFormService;
     }
 
     public function __invoke(Request $request)
     {
-        $numberDTO = new NumberDTO();
         $form = $this->createForm(FindNumberForm::class);
-
         $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $numberDTO = $this->findNumberService->executeFromController($form->getData());
-        }
+        $numberDTO = $this->findNumberFormService->execute($form);
 
         return $this->render(
             'calculator/formPage.html.twig', [

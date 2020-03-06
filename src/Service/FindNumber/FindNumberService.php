@@ -12,10 +12,9 @@ use App\DTO\NumberDTO;
 
 class FindNumberService implements FindNumberServiceInterface
 {
-    public function executeFromController(
-        array $formData
+    public function execute(
+        int $numberOfLongSeries
     ): NumberDTO {
-        $numberOfLongSeries = $this->formatFormData($formData);
         $generatedSeries = $this->generateSeries($numberOfLongSeries);
         $this->getMaxNumberFromSeries($generatedSeries);
 
@@ -34,12 +33,6 @@ class FindNumberService implements FindNumberServiceInterface
             $number,
             $this->getMaxNumberFromSeries($generatedSeries)
         );
-    }
-
-    private function formatFormData(
-        array $formData
-    ): int {
-        return (int)$formData['howLongSeries'];
     }
 
     private function getMaxNumberFromSeries(

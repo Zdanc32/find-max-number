@@ -43,7 +43,7 @@ class FindNumberCommand extends Command
             '============',
             '',
         ]);
-        $numberDTO = $this->findNumberService->executeFromCommand($input->getArgument('selectedNumber'));
+        $numberDTO = $this->findNumberService->execute($input->getArgument('selectedNumber'));
         // retrieve the argument value using getArgument()
         $output->writeln('Selected number: '.$numberDTO->getNumber());
         $output->writeln('Max number: '.$numberDTO->getMaxNumber());
